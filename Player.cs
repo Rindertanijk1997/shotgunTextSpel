@@ -43,8 +43,6 @@ namespace ShotgunGame
         }
 
         // Varje spelare måste kunna välja ett drag.
-        // Människa: fråga i terminalen.
-        // Dator: slumpa bland tillåtna drag.
         public abstract Move VäljDrag();
     }
 }

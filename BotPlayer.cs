@@ -8,8 +8,8 @@ namespace ShotgunGame
     {
         private Random slump = new Random();
 
-        // Namnet skickas vidare till Player-klassen 
-        public BotPlayer(string namn) : base(namn)
+        // datorn sätts till "Datorn" 
+        public BotPlayer() : base("Datorn")
         {
         }
 
@@ -19,7 +19,7 @@ namespace ShotgunGame
             // Skapa en lista med alla tillåtna drag just nu
             List<Move> möjligaDrag = new List<Move>();
 
-            // Dessa två drag är alltid tillåtna
+            // Dessa två drag går alltid
             möjligaDrag.Add(Move.Ladda);
             möjligaDrag.Add(Move.Blocka);
 
@@ -39,10 +39,10 @@ namespace ShotgunGame
             int index = slump.Next(möjligaDrag.Count);
             Move datornsVal = möjligaDrag[index];
 
-            // Vänta 3 sekunder för att göra det mer verkligt
+            // vänta 3 sekunder för att göra det mer verkligt
             System.Threading.Thread.Sleep(3000);
 
-            // Skriv ut i terminalen vad datorn väljer (siffra + namn)
+            // Skriv ut i terminalen vad datorn slumpar 
             Console.WriteLine($"{Namn} väljer: {(int)datornsVal}) {datornsVal}");
 
             return datornsVal;

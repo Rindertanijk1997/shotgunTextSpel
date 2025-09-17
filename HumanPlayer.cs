@@ -10,10 +10,10 @@ namespace ShotgunGame
         {
         }
 
-        // Här väljer spelaren sitt drag 
+        // spelaren väljer sitt drag 
         public override Move VäljDrag()
         {
-            while (true) // loopar tills spelaren väljer något giltigt
+            while (true) // loopar tills man väljer något giltigt
             {
                 Console.WriteLine($"{Namn}, välj ditt drag:");
                 Console.WriteLine("1) Ladda");
@@ -32,19 +32,19 @@ namespace ShotgunGame
                 Console.Write("Ditt val: ");
                 string input = Console.ReadLine() ?? "";
 
-                // Försök tolka spelarens val som en siffra
+                // tolka spelarens val som en siffra
                 if (int.TryParse(input, out int val))
                 {
                     Move valtDrag = (Move)val;
 
-                    // Kolla att draget är tillåtet just nu
+                    // Kolla draget är tillåtet just nu
                     if (valtDrag == Move.Ladda) return Move.Ladda;
                     if (valtDrag == Move.Blocka) return Move.Blocka;
                     if (valtDrag == Move.Skjuta && KanSkjuta) return Move.Skjuta;
                     if (valtDrag == Move.Shotgun && KanShotgun) return Move.Shotgun;
                 }
 
-                // Om vi hamnar här var inmatningen felaktig
+                // Om valet är fel
                 Console.WriteLine("Ogiltigt val, försök igen!");
             }
         }

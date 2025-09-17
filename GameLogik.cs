@@ -2,17 +2,17 @@ using System;
 
 namespace ShotgunGame
 {
-    // Den här klassen innehåller själva spel-logiken 
+    // Den här klassen innehåller spel-logiken 
     public class GameLogik
     {
         private readonly Player människa;
         private readonly Player dator;
 
-        // Skapa spelet med en människa och en bot
-        public GameLogik(string spelarNamn, string datorNamn = "Datorn")
+        // skapa spelet med en människa och en bot
+        public GameLogik(string spelarNamn)
         {
             människa = new HumanPlayer(spelarNamn);
-            dator = new BotPlayer(datorNamn);
+            dator = new BotPlayer(); 
         }
 
         // Kör en match tills någon vinner
@@ -32,10 +32,10 @@ namespace ShotgunGame
                 // jag väljer drag
                 Move mittDrag = människa.VäljDrag();
 
-                // dator väljer drag (slumpas bland tillåtna)
+                // dator väljer drag 
                 Move datornsDrag = dator.VäljDrag();
 
-                // räkna utfallet av rundan
+                // räkna resultat av rundan
                 RoundResult resultat = RäknaUtRunda(mittDrag, datornsDrag);
 
                 // Kolla om någon vann
@@ -59,7 +59,6 @@ namespace ShotgunGame
         // Visa antal skott
         private void VisaStatus()
         {
-            Console.WriteLine();
             Console.WriteLine($"Antal skott - {människa.Namn}: {människa.Skott} Och {dator.Namn}: {dator.Skott}");
         }
 
@@ -74,7 +73,7 @@ namespace ShotgunGame
         // alla regler för vad som händer beroende på drag
         private RoundResult RäknaUtRunda(Move human, Move bot)
         {
-            //  Shotgun-fall först 
+            //  Shotgun-fall
             if (human == Move.Shotgun && bot == Move.Shotgun)
             {
                 // båda tappar 1 skott, ingen vinner
