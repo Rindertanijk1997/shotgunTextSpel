@@ -1,0 +1,14 @@
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\bin\Debug\net9.0\shotgunTextSpel.exe
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\bin\Debug\net9.0\shotgunTextSpel.deps.json
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\bin\Debug\net9.0\shotgunTextSpel.runtimeconfig.json
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\bin\Debug\net9.0\shotgunTextSpel.dll
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\bin\Debug\net9.0\shotgunTextSpel.pdb
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.AssemblyInfoInputs.cache
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.AssemblyInfo.cs
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.csproj.CoreCompileInputs.cache
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.dll
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\refint\shotgunTextSpel.dll
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.pdb
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.genruntimeconfig.cache
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\ref\shotgunTextSpel.dll
