@@ -12,3 +12,4 @@ C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\n
 C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.pdb
 C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.genruntimeconfig.cache
 C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\ref\shotgunTextSpel.dll
+C:\Users\rinde\OneDrive\Skrivbord\Jensen\dotNetGrund\shotgunTextSpel\obj\Debug\net9.0\shotgunTextSpel.sourcelink.json

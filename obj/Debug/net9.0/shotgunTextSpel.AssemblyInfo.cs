@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shotgunTextSpel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d56f1fb5b9cd21df0e5faf126d7fcb6ed794d8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("shotgunTextSpel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shotgunTextSpel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
