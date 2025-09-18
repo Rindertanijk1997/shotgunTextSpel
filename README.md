@@ -12,11 +12,11 @@ Spelet påminner om Sten, Sax, Påse men med någon mer regler. Matchen pågår 
 
 ## Projektstruktur
 - Program.cs = Huvudfilen som startar spelet och visar menyn
-- GameLogik.cs = Innehåller spelreglerna och styr hela matchen
-- Player.cs = Basklass för både människa och dator (hanterar namn och skott)
+- GameLogik.cs = Innehåller spelreglerna och styr matchen
+- Player.cs = Basklass för både människa och dator
 - HumanPlayer.cs = Klass som tar hand om spelarens inmatning via terminalen
 - BotPlayer.cs = Klass som styr datorns val med slumpgenerator
-- Move.cs = Enum som definierar alla möjliga drag (Ladda, Blocka, Skjuta, Shotgun)
+- Move.cs = Enum som definierar alla möjliga drag 
 - .gitignore = Säkerställer att tillfälliga filer och mappar (bin/ och obj/) inte laddas upp till GitHub  
 
 ## Arbetssätt
