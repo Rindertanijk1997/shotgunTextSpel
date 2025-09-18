@@ -29,6 +29,7 @@ namespace ShotgunGame
                     Console.WriteLine("4) Shotgun");
                 }
 
+                Console.WriteLine("");
                 Console.Write("Ditt val: ");
                 string input = Console.ReadLine() ?? "";
 

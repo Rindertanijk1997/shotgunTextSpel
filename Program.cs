@@ -29,7 +29,7 @@ namespace ShotgunGame
 
                 if (val == "1")
                 {
-                    var spel = new GameLogik(namn, "Datorn");
+                    var spel = new GameLogik(namn);
                     spel.StartaMatch();
 
                     // Tillbaka till menyn efter matchen

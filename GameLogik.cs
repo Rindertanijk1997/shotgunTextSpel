@@ -60,6 +60,7 @@ namespace ShotgunGame
         private void VisaStatus()
         {
             Console.WriteLine($"Antal skott - {människa.Namn}: {människa.Skott} Och {dator.Namn}: {dator.Skott}");
+            Console.WriteLine("");
         }
 
         // Resultat för en runda
