@@ -5,7 +5,7 @@ namespace ShotgunGame
     // Klass för mig
     public class HumanPlayer : Player
     {
-        // Namnet skickas till Player-klassen 
+        // Namnet skickas till Player 
         public HumanPlayer(string namn) : base(namn)
         {
         }
@@ -13,7 +13,8 @@ namespace ShotgunGame
         // spelaren väljer sitt drag 
         public override Move VäljDrag()
         {
-            while (true) // loopar tills man väljer något giltigt
+            // loopar tills man väljer något giltigt
+            while (true)
             {
                 Console.WriteLine($"{Namn}, välj ditt drag:");
                 Console.WriteLine("1) Ladda");
@@ -30,7 +31,8 @@ namespace ShotgunGame
                 }
 
                 Console.WriteLine("");
-                Console.Write("Ditt val: ");
+
+                // Läs in spelarens val
                 string input = Console.ReadLine() ?? "";
 
                 // tolka spelarens val som en siffra
@@ -38,11 +40,27 @@ namespace ShotgunGame
                 {
                     Move valtDrag = (Move)val;
 
-                    // Kolla draget är tillåtet just nu
-                    if (valtDrag == Move.Ladda) return Move.Ladda;
-                    if (valtDrag == Move.Blocka) return Move.Blocka;
-                    if (valtDrag == Move.Skjuta && KanSkjuta) return Move.Skjuta;
-                    if (valtDrag == Move.Shotgun && KanShotgun) return Move.Shotgun;
+                    // Kolla om draget är tillåtet
+                    if (valtDrag == Move.Ladda)
+                    {
+                        Console.WriteLine("Du väljer: Ladda");
+                        return Move.Ladda;
+                    }
+                    if (valtDrag == Move.Blocka)
+                    {
+                        Console.WriteLine("Du väljer: Blocka");
+                        return Move.Blocka;
+                    }
+                    if (valtDrag == Move.Skjuta && KanSkjuta)
+                    {
+                        Console.WriteLine("Du väljer: Skjuta");
+                        return Move.Skjuta;
+                    }
+                    if (valtDrag == Move.Shotgun && KanShotgun)
+                    {
+                        Console.WriteLine("Du väljer: Shotgun");
+                        return Move.Shotgun;
+                    }
                 }
 
                 // Om valet är fel

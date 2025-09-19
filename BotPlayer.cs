@@ -43,7 +43,7 @@ namespace ShotgunGame
             System.Threading.Thread.Sleep(3000);
 
             // Skriv ut i terminalen vad datorn slumpar 
-            Console.WriteLine($"{Namn} väljer: {(int)datornsVal}) {datornsVal}");
+            Console.WriteLine($"{Namn} väljer: {datornsVal}");
 
             return datornsVal;
         }

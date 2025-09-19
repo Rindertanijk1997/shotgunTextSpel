@@ -48,8 +48,7 @@ namespace ShotgunGame
                 }
             }
 
-            Console.WriteLine("Tack för att du spelade! Tryck på tangent för att stänga");
-            Console.ReadKey();
+            Console.WriteLine("Synd att du lämnar; vi hade ju så roligt!");
         }
     }
 }
