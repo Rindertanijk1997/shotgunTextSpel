@@ -34,7 +34,7 @@ namespace ShotgunGame
 
                     // Tillbaka till menyn efter matchen
                     Console.WriteLine();
-                    Console.WriteLine("Tryck valfri tangent för att gå till menyn...");
+                    Console.WriteLine("Tryck på tangent för att gå till menyn");
                     Console.ReadKey();
                 }
                 else if (val == "2")
@@ -43,12 +43,12 @@ namespace ShotgunGame
                 }
                 else
                 {
-                    Console.WriteLine("Ogiltigt val. Tryck valfri tangent för att gå till menyn...");
+                    Console.WriteLine("Ogiltigt val. Tryck på tangent för att gå till menyn");
                     Console.ReadKey();
                 }
             }
 
-            Console.WriteLine("Tack för att du spelade! Tryck valfri tangent för att stänga.");
+            Console.WriteLine("Tack för att du spelade! Tryck på tangent för att stänga");
             Console.ReadKey();
         }
     }

@@ -51,7 +51,7 @@ namespace ShotgunGame
                 }
                 else
                 {
-                    // Ingen vann denna runda, fortsätt
+                    // Ingen vann, fortsätt
                 }
             }
         }
@@ -157,9 +157,6 @@ namespace ShotgunGame
                 return RoundResult.DatorVinner;
             }
 
-            // Fallback om något saknas
-            Console.WriteLine("Oväntad kombination → ingen förändring.");
-            return RoundResult.Fortsätt;
         }
     }
 }
