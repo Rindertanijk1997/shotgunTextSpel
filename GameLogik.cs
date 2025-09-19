@@ -12,7 +12,7 @@ namespace ShotgunGame
         public GameLogik(string spelarNamn)
         {
             människa = new HumanPlayer(spelarNamn);
-            dator = new BotPlayer(); 
+            dator = new BotPlayer();
         }
 
         // Kör en match tills någon vinner
@@ -157,6 +157,8 @@ namespace ShotgunGame
                 return RoundResult.DatorVinner;
             }
 
+
+            return RoundResult.Fortsätt;
         }
     }
 }
