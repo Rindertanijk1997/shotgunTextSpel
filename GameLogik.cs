@@ -71,13 +71,13 @@ namespace ShotgunGame
             DatorVinner
         }
 
-        // här använder jag en tuple (human, bot) för att ställa bådas drag mot varandra
+        // här använder jag en tuple (human, bot) för att ställa båda drag mot varandra
         // och direkt bestämma resultatet av rundan
         private RoundResult RäknaUtRunda(Move human, Move bot)
         {
             var result = RoundResult.Fortsätt;
 
-            switch ((human, bot))
+            switch ((human, bot)) // sätter ordning, alltid human först och bot sen
             {
                 // SHOTGUN-fall först
                 case (Move.Shotgun, Move.Shotgun):
@@ -87,6 +87,7 @@ namespace ShotgunGame
                     result = RoundResult.Fortsätt;
                     break;
 
+                // _ = spelar ingen roll vad motståndaren har
                 case (Move.Shotgun, _):
                     Console.WriteLine("Du använder SHOTGUN = du vinner direkt!");
                     result = RoundResult.MänniskaVinner;
