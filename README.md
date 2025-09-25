@@ -8,7 +8,8 @@ Spelet påminner om Sten, Sax, Påse men med någon mer regler. Matchen pågår 
 - Ladda = +1 skott  
 - Blocka = stoppar skott  
 - Skjuta = förbrukar ett skott  
-- Shotgun = kräver 3 skott och vinner direkt  
+- Shotgun = kräver 3 skott och vinner direkt
+- Om båda skjuter samtidigt = förbrukar ett skott 
 
 ## Projektstruktur
 - Program.cs = Huvudfilen som startar spelet och visar menyn
@@ -25,7 +26,8 @@ Spelet påminner om Sten, Sax, Påse men med någon mer regler. Matchen pågår 
 - Delat upp koden i flera filer(Klasser) för tydlighet.  
 - Jobbat objektorienterat med klasser och arv.  
 - Använt Random för datorns val.  
-- Lagt till en fördröjning på 3 sekunder vid datorns drag för att kännas mer verkligt.   
+- Lagt till en fördröjning på 3 sekunder vid datorns drag för att kännas mer verkligt.
+- Snackat med klasskamrater för feedback och tips 
 
 ## Hur spelet fungerar
 - Spelaren får välja mellan tillgängliga drag via meny i terminalen.  
