@@ -51,7 +51,7 @@ namespace ShotgunGame
                 }
                 else
                 {
-                    // Ingen vann, fortsätt
+                    // ingen vann, fortsätt
                 }
             }
         }
@@ -71,94 +71,87 @@ namespace ShotgunGame
             DatorVinner
         }
 
-        // alla regler för vad som händer beroende på drag
+        // här använder jag en tuple (human, bot) för att ställa bådas drag mot varandra
+        // och direkt bestämma resultatet av rundan
         private RoundResult RäknaUtRunda(Move human, Move bot)
         {
-            //  Shotgun-fall
-            if (human == Move.Shotgun && bot == Move.Shotgun)
+            var result = RoundResult.Fortsätt;
+
+            switch ((human, bot))
             {
-                // båda tappar 1 skott, ingen vinner
-                människa.FörbrukaSkott();
-                dator.FörbrukaSkott();
-                Console.WriteLine("Shotgun vs Shotgun = båda förlorar 1 skott. Ingen vinner denna runda.");
-                return RoundResult.Fortsätt;
-            }
-            if (human == Move.Shotgun)
-            {
-                Console.WriteLine("Du använder SHOTGUN = du vinner direkt!");
-                return RoundResult.MänniskaVinner;
-            }
-            if (bot == Move.Shotgun)
-            {
-                Console.WriteLine("Datorn använder SHOTGUN = datorn vinner direkt!");
-                return RoundResult.DatorVinner;
+                // SHOTGUN-fall först
+                case (Move.Shotgun, Move.Shotgun):
+                    människa.FörbrukaSkott();
+                    dator.FörbrukaSkott();
+                    Console.WriteLine("Shotgun vs Shotgun = båda förlorar 1 skott. Ingen vinner denna runda.");
+                    result = RoundResult.Fortsätt;
+                    break;
+
+                case (Move.Shotgun, _):
+                    Console.WriteLine("Du använder SHOTGUN = du vinner direkt!");
+                    result = RoundResult.MänniskaVinner;
+                    break;
+
+                case (_, Move.Shotgun):
+                    Console.WriteLine("Datorn använder SHOTGUN = datorn vinner direkt!");
+                    result = RoundResult.DatorVinner;
+                    break;
+
+                // Vanliga kombinationer
+                case (Move.Ladda, Move.Ladda):
+                    människa.Ladda();
+                    dator.Ladda();
+                    Console.WriteLine("Ladda vs Ladda = båda får +1 skott.");
+                    break;
+
+                case (Move.Ladda, Move.Blocka):
+                    människa.Ladda();
+                    Console.WriteLine("Ladda vs Blocka = du får +1 skott.");
+                    break;
+
+                case (Move.Blocka, Move.Ladda):
+                    dator.Ladda();
+                    Console.WriteLine("Blocka vs Ladda = datorn får +1 skott.");
+                    break;
+
+                case (Move.Blocka, Move.Blocka):
+                    Console.WriteLine("Blocka vs Blocka = ingenting händer.");
+                    break;
+
+                case (Move.Skjuta, Move.Blocka):
+                    människa.FörbrukaSkott();
+                    Console.WriteLine("Skjuta vs Blocka = du förlorar 1 skott.");
+                    break;
+
+                case (Move.Blocka, Move.Skjuta):
+                    dator.FörbrukaSkott();
+                    Console.WriteLine("Blocka vs Skjuta = datorn förlorar 1 skott.");
+                    break;
+
+                case (Move.Skjuta, Move.Skjuta):
+                    människa.FörbrukaSkott();
+                    dator.FörbrukaSkott();
+                    Console.WriteLine("Skjuta vs Skjuta = båda förlorar 1 skott.");
+                    break;
+
+                case (Move.Skjuta, Move.Ladda):
+                    Console.WriteLine("Skjuta vs Ladda = du skjuter en laddande motståndare = du vinner!");
+                    result = RoundResult.MänniskaVinner;
+                    break;
+
+                case (Move.Ladda, Move.Skjuta):
+                    Console.WriteLine("Ladda vs Skjuta = datorn skjuter dig när du laddar = datorn vinner!");
+                    result = RoundResult.DatorVinner;
+                    break;
+
+                // tror den ska vara omöjlig att få, men man vet aldrig
+                default:
+                    Console.WriteLine("Oväntad kombination = ingen förändring.");
+                    break;
             }
 
-            // vanliga komb
-            if (human == Move.Ladda && bot == Move.Ladda)
-            {
-                människa.Ladda();
-                dator.Ladda();
-                Console.WriteLine("Ladda vs Ladda = båda får +1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Ladda && bot == Move.Blocka)
-            {
-                människa.Ladda();
-                Console.WriteLine("Ladda vs Blocka = du får +1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Blocka && bot == Move.Ladda)
-            {
-                dator.Ladda();
-                Console.WriteLine("Blocka vs Ladda = datorn får +1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Blocka && bot == Move.Blocka)
-            {
-                Console.WriteLine("Blocka vs Blocka = ingenting händer.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Skjuta && bot == Move.Blocka)
-            {
-                människa.FörbrukaSkott();
-                Console.WriteLine("Skjuta vs Blocka = du förlorar 1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Blocka && bot == Move.Skjuta)
-            {
-                dator.FörbrukaSkott();
-                Console.WriteLine("Blocka vs Skjuta = datorn förlorar 1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Skjuta && bot == Move.Skjuta)
-            {
-                människa.FörbrukaSkott();
-                dator.FörbrukaSkott();
-                Console.WriteLine("Skjuta vs Skjuta = båda förlorar 1 skott.");
-                return RoundResult.Fortsätt;
-            }
-
-            if (human == Move.Skjuta && bot == Move.Ladda)
-            {
-                Console.WriteLine("Skjuta vs Ladda = du skjuter en laddande motståndare = du vinner!");
-                return RoundResult.MänniskaVinner;
-            }
-
-            if (human == Move.Ladda && bot == Move.Skjuta)
-            {
-                Console.WriteLine("Ladda vs Skjuta = datorn skjuter dig när du laddar = datorn vinner!");
-                return RoundResult.DatorVinner;
-            }
-
-
-            return RoundResult.Fortsätt;
+            return result;
         }
+
     }
 }
