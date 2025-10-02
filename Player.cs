@@ -26,7 +26,6 @@ namespace ShotgunGame
             Namn = namn;
         }
 
-        // Ladda = plus 1 skott
         public void Ladda()
         {
             Skott = Skott + 1;

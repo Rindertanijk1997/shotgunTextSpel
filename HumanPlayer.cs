@@ -5,7 +5,7 @@ namespace ShotgunGame
     // Klass för mig
     public class HumanPlayer : Player
     {
-        // Namnet skickas till Player 
+        // jag får spelarens namn från GameLogik och skickar vidare till Player-klassen
         public HumanPlayer(string namn) : base(namn)
         {
         }
